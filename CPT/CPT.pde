@@ -48,7 +48,7 @@ void setup() {
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
   player = new Object(pLoc, pSpeed);
-  player.setColor(#B22222);
+  player.setColor(#3498DB);
 }
 
 void draw() {

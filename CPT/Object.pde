@@ -14,6 +14,10 @@ public class Object {
     this.col = col;
   }
   
+  public int getColor() {
+    return this.col;
+  }
+  
   public boolean collides(float x, float y) {
     PVector point = new PVector(x, y);
     float dist = PVector.dist(this.loc, point);
