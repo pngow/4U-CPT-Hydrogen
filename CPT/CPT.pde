@@ -92,19 +92,7 @@ void keyReleased() {
   }
 }
 
-//move player in game by pressing L/R arrow keys
-void keyPressed() {
-  float x = player.getXLoc();
-    
-  if (x <= 45) {
-    x = 45;
-  } else if (x >= 555) {
-    x = 555;
-  }
-    
-  if (keyCode == LEFT) {
-    player.setLoc(x - 12, 500);
-  } else if (keyCode == RIGHT) {
-    player.setLoc(x + 12, 500);
-  }
+//move player in game according to mouse
+void mouseMoved() {
+  player.loc.set(mouseX, 500);
 }
