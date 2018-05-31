@@ -47,7 +47,7 @@ public class Game {
     
     //check collision && if cell passed screen boundaries
     for (int i = 0; i < cells.size(); i++) {
-      if (cells.get(i).collides(player.loc.x, player.loc.y)) {
+      if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() == player.getColor()) {
         println("collision");
         cells.remove(i);
         score ++;
