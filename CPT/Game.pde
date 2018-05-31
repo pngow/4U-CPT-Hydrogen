@@ -51,6 +51,16 @@ public class Game {
         println("collision");
         cells.remove(i);
         score ++;
+      } else if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() != player.getColor()) {
+        println("wrong collision");
+        cells.remove(i);
+        score --;
+        
+        if (score < 1) {
+          gameScreen = 4;
+          restart();
+        }
+        
       } else if (cells.get(i).getYLoc() >= 660) {
         println("removed cell");
         cells.remove(i);
@@ -82,8 +92,6 @@ public class Game {
       #E67E22, //orange
       #28B463, //green
       #F4D03F, //yellow
-      #8B4513, //brown
-      #808080 //gray
     };
     int colorLoc = rand.nextInt(colors.length);
     

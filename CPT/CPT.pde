@@ -17,7 +17,7 @@ About about;
 Button start;
 Game game;
 GameOver gameOver;
-Object player;
+Player player;
 int score;
 
 void setup() {
@@ -47,7 +47,7 @@ void setup() {
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
-  player = new Object(pLoc, pSpeed);
+  player = new Player(pLoc, pSpeed);
   player.setColor(#3498DB);
 }
 
