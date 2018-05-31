@@ -45,6 +45,19 @@ public class Game {
      
     player.draw();
     
+    //if (score > 0 && score % 2 == 0) {
+    //  Random rand = new Random();
+      
+    //  int[] colors = {
+    //    #3498DB, //blue
+    //    #A569BD, //purple
+    //    #E67E22, //orange
+    //    #28B463, //green
+    //    #F4D03F, //yellow
+    //  };
+    //  player.setColor(colors[rand.nextInt(colors.length)]);
+    //}
+    
     //check collision && if cell passed screen boundaries
     for (int i = 0; i < cells.size(); i++) {
       if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() == player.getColor()) {
@@ -96,7 +109,7 @@ public class Game {
     int colorLoc = rand.nextInt(colors.length);
     
     PVector cLoc = new PVector(random(35, width-35), 0);
-    PVector cSpeed = new PVector(0, +2);
+    PVector cSpeed = new PVector(0, +5);
     Object newCell = new Object(cLoc, cSpeed);
     newCell.setColor(colors[colorLoc]);
     cells.add(newCell);
@@ -104,7 +117,7 @@ public class Game {
   
   void generateObstacles() {
     PVector oLoc = new PVector(random(20, width-20), 0);
-    PVector oSpeed = new PVector(0, +2);
+    PVector oSpeed = new PVector(0, +5);
     Obstacle newObst = new Obstacle(oLoc, oSpeed);
     obstacles.add(newObst);
   }
