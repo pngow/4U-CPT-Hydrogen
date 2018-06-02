@@ -45,25 +45,28 @@ public class Game {
      
     player.draw();
     
-    //if (score > 0 && score % 2 == 0) {
-    //  Random rand = new Random();
-      
-    //  int[] colors = {
-    //    #3498DB, //blue
-    //    #A569BD, //purple
-    //    #E67E22, //orange
-    //    #28B463, //green
-    //    #F4D03F, //yellow
-    //  };
-    //  player.setColor(colors[rand.nextInt(colors.length)]);
-    //}
-    
     //check collision && if cell passed screen boundaries
     for (int i = 0; i < cells.size(); i++) {
       if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() == player.getColor()) {
         println("collision");
         cells.remove(i);
         score ++;
+        levelScore ++;
+        
+        //change player character
+        if (levelScore > 9) {
+          Random rand = new Random();
+          int[] colors = {
+            #3498DB, //blue
+            #A569BD, //purple
+            #E67E22, //orange
+            #28B463, //green
+            #F4D03F, //yellow
+          };
+          player.setColor(colors[rand.nextInt(colors.length)]);
+          levelScore = 0;
+        }
+        
       } else if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() != player.getColor()) {
         println("wrong collision");
         cells.remove(i);

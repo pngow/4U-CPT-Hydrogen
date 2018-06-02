@@ -19,6 +19,7 @@ Game game;
 GameOver gameOver;
 Player player;
 int score;
+int levelScore;
 
 void setup() {
   size(600, 600);
@@ -41,9 +42,10 @@ void setup() {
   start = new Button (225, 350);
   start.setFunction("START", 272, 408);
   
-  //initalize beginning score for game
+  //initalize beginning score and level for game
   score = 0;
-  
+  levelScore = 0;
+
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
