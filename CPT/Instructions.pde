@@ -1,4 +1,3 @@
-
 class Instructions {
   
   void draw() {
@@ -10,7 +9,7 @@ class Instructions {
     
     fill(0);
     textSize(20);
-    text("-Use the LEFT and RIGHT keys to move", 100, 140);
+    text("-Use mouse pad to move", 164, 140);
     text("-Collect the specific cells while avoiding the obstacles", 40, 170);
     
     textSize(15);
