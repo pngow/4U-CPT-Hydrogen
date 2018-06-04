@@ -2,7 +2,7 @@ public class Object {
   private PVector loc;
   private PVector speed;
   private int l = 70;  
-  private int w = 60;
+  private int w = 70;
   private int col;
   
   public Object(PVector loc, PVector speed) {

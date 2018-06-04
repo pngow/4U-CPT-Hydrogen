@@ -66,6 +66,7 @@ public class Game {
           Random rand = new Random();
           player.setColor(colors[rand.nextInt(colors.length)]);
           levelScore = 0;
+          score += 10;
         }
         
       } else if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() != player.getColor()) {

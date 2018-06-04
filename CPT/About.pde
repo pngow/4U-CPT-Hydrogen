@@ -5,7 +5,7 @@ class About {
     
     fill(#EC7063);
     textSize(40);
-    text("ABOUT", 230, 100);
+    text("STEM CELLS", 170, 100);
     
     fill(0);
     textSize(20);
