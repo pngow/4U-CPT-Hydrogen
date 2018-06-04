@@ -1,5 +1,13 @@
 import java.util.Random;
 
+int[] colors = {
+  #3498DB, //blue
+  #A569BD, //purple
+  #E67E22, //orange
+  #28B463, //green
+  #F4D03F, //yellow
+};
+
 public class Game {
   
   ArrayList<Object> cells = new ArrayList();
@@ -54,15 +62,8 @@ public class Game {
         levelScore ++;
         
         //change player character
-        if (levelScore > 9) {
+        if (levelScore > 4) {
           Random rand = new Random();
-          int[] colors = {
-            #3498DB, //blue
-            #A569BD, //purple
-            #E67E22, //orange
-            #28B463, //green
-            #F4D03F, //yellow
-          };
           player.setColor(colors[rand.nextInt(colors.length)]);
           levelScore = 0;
         }
@@ -97,18 +98,17 @@ public class Game {
     fill(0);
     textSize(20);
     text("SCORE: " + score, 10,30);
+    
+    noStroke();
+    fill(player.getColor());
+    ellipse(25, 60, 25, 25);
+    text("x" + (5 - levelScore), 45, 65);
+    
+    
   }
   
   void generateCells() {
     Random rand = new Random();
-    
-    int[] colors = {
-      #3498DB, //blue
-      #A569BD, //purple
-      #E67E22, //orange
-      #28B463, //green
-      #F4D03F, //yellow
-    };
     int colorLoc = rand.nextInt(colors.length);
     
     PVector cLoc = new PVector(random(35, width-35), 0);
