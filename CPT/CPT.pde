@@ -17,7 +17,7 @@ About about;
 Button start;
 Game game;
 GameOver gameOver;
-Player player;
+Object player;
 int score;
 int levelScore;
 
@@ -49,7 +49,7 @@ void setup() {
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
-  player = new Player(pLoc, pSpeed);
+  player = new Object(pLoc, pSpeed);
   
   player.setColor(#3498DB);
 }
@@ -69,19 +69,19 @@ void draw() {
 }
 
 void mouseClicked() {
-  if (mouseX > instructions.getX() && mouseX < instructions.getX() + instructions.getLength() 
+  if (gameScreen == 0 && mouseX > instructions.getX() && mouseX < instructions.getX() + instructions.getLength() 
       && mouseY > instructions.getY() && mouseY < instructions.getY() + instructions.getWidth()) {
     System.out.println("instructions");
     gameScreen = 2;
   }
   
-  if (mouseX > aboutButton.getX() && mouseX < aboutButton.getX() + aboutButton.getLength() && mouseY > aboutButton.getY()
+  if (gameScreen == 0 && mouseX > aboutButton.getX() && mouseX < aboutButton.getX() + aboutButton.getLength() && mouseY > aboutButton.getY()
       && mouseY < aboutButton.getY() + aboutButton.getWidth()) {
     System.out.println("about");
     gameScreen = 3;
   }
   
-  if (mouseX > start.getX() && mouseX < start.getX() + start.getLength() && mouseY > start.getY()
+  if (gameScreen == 0 && mouseX > start.getX() && mouseX < start.getX() + start.getLength() && mouseY > start.getY()
       && mouseY < start.getY() + start.getWidth()) {
     System.out.println("start");
     gameScreen = 1;
@@ -98,4 +98,11 @@ void keyReleased() {
 //move player in game according to mouse
 void mouseMoved() {
   player.loc.set(mouseX, 500);
+  
+    if (mouseX <= player.getWidth()/2) {
+    player.loc.set(player.getWidth()/2, 500);
+  } else if (mouseX >= 600-(player.getWidth()/2)) {
+    player.loc.set(600-player.getWidth()/2, 500);
+  }
+    
 }
