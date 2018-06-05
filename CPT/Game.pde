@@ -17,27 +17,21 @@ public class Game {
     background(255, 255, 255);
    
     //initalize cells, add into an arraylist to store
-    if (score < 20 && frameCount % 180 == 0) {
+    int frameAdjust = 40;
+    int scoreCheck = 0;
+    if (frameCount % 180 == 0) {
       generateCells();
-    } else if (score >= 20 && frameCount % 120 == 0) {
+    } else if (score > 0 && score - 9 >= scoreCheck && frameCount % (180 - frameAdjust) == 0) {
       generateCells();
+      //frameAdjust += 40;
+      scoreCheck = score;
     }
     
     if (frameCount % 200 == 0) {
       generateObstacles();
-    } else if (score >= 20 && frameCount % 140 == 0) {
+    } else if (score > 0 && score - 9 >= scoreCheck && frameCount % (120 - frameAdjust) == 0) {
       generateObstacles();
-    }
-    
-    //if (score == 20) {
-    //  if (frameCount % 60 == 0) {
-    //  generateCells();
-    //  }
-    //} else if (score == 40) {
-    //  if (frameCount % 30 == 0) {
-    //    generateCells();
-    //  }
-    //}
+    } 
    
     //draw and move cells
     for (Object cell : cells) {
@@ -97,7 +91,7 @@ public class Game {
     }
      
     fill(0);
-    textSize(20);
+    textSize(25);
     text("SCORE: " + score, 10,30);
     
     noStroke();
