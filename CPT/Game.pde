@@ -21,7 +21,7 @@ public class Game {
     int scoreCheck = 0;
     if (frameCount % 180 == 0) {
       generateCells();
-    } else if (score > 0 && score - 9 >= scoreCheck && frameCount % (180 - frameAdjust) == 0) {
+    } else if (score > 0 && score - 5 >= scoreCheck && frameCount % (180 - frameAdjust) == 0) {
       generateCells();
       //frameAdjust += 40;
       scoreCheck = score;
@@ -29,7 +29,7 @@ public class Game {
     
     if (frameCount % 200 == 0) {
       generateObstacles();
-    } else if (score > 0 && score - 9 >= scoreCheck && frameCount % (120 - frameAdjust) == 0) {
+    } else if (score > 0 && score - 5 >= scoreCheck && frameCount % (120 - frameAdjust) == 0) {
       generateObstacles();
     } 
    
@@ -91,7 +91,7 @@ public class Game {
     }
      
     fill(0);
-    textSize(25);
+    textSize(20);
     text("SCORE: " + score, 10,30);
     
     noStroke();
