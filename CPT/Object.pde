@@ -1,8 +1,7 @@
 public class Object {
   private PVector loc;
   private PVector speed;
-  private int l = 70;  
-  private int w = 70;
+  private int diameter = 70;
   private int col;
   
   public Object(PVector loc, PVector speed) {
@@ -22,13 +21,13 @@ public class Object {
     PVector point = new PVector(x, y);
     float dist = PVector.dist(this.loc, point);
     
-    return dist <= l;
+    return dist <= diameter/2;
   }
   
   void draw() {
     noStroke();
     fill(col);
-    ellipse(loc.x, loc.y, l, w);
+    ellipse(loc.x, loc.y, diameter, diameter);
   }
   
   public float getXLoc() {
@@ -45,6 +44,10 @@ public class Object {
   
   public PVector getSpeed() {
     return speed;
+  }
+  
+  public int getDiameter() {
+    return diameter;
   }
   
   public void setLoc(float x, float y) {
