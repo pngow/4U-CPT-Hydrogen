@@ -5,15 +5,16 @@ public class Player {
   private int w = 70;
   private int col;
   private PImage stemImg;
+  private String url;
   
   public Player(PVector loc, PVector speed) {
     this.loc = loc;
     this.speed = speed;
   }
   
-  public void setGraphics(PImage stemImg, int col) {
+  public void setGraphics(int col, String url) {
     this.col = col;
-    this.stemImg = stemImg;
+    this.stemImg = loadImage(url, "png");
   }
   
   public void setColor(int col){

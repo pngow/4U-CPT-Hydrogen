@@ -50,21 +50,20 @@ public class Game {
     //check collision && if cell passed screen boundaries
     for (int i = 0; i < cells.size(); i++) {
       if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() == player.getColor()) {
-        println("collision");
         cells.remove(i);
         score ++;
         levelScore ++;
         
         //change player character
-        if (levelScore > 4) {
+        if (levelScore > 0) {
           Random rand = new Random();
-          player.setColor(colors[rand.nextInt(colors.length)]);
+          int randI = rand.nextInt(colors.length);
+          player.setGraphics(colors[randI], imgs[randI]);
           levelScore = 0;
           score += 10;
         }
         
       } else if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() != player.getColor()) {
-        println("wrong collision");
         cells.remove(i);
         score --;
         
@@ -74,18 +73,15 @@ public class Game {
         }
         
       } else if (cells.get(i).getYLoc() >= 660) {
-        println("removed cell");
         cells.remove(i);
       }
     }
     
     for (int n = 0; n < obstacles.size(); n++) {
        if (obstacles.get(n).collides(player.loc.x, player.loc.y)) {
-        println("game over");
         gameScreen = 4;
         restart();
       } else if (obstacles.get(n).getYLoc() >= 600) {
-        println("removed obstacle");
         obstacles.remove(n);
       }
     }

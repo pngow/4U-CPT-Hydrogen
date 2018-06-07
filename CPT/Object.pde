@@ -10,6 +10,8 @@ public class Object {
     this.speed = speed;
   }
   
+
+  
   public void setColor(int col) {
     this.col = col;
   }
