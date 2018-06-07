@@ -39,6 +39,7 @@ class Button {
     fill(#EC7063);
     rect(x, y, l, w, 20);
     
+    noStroke();
     fill(0);
     textSize(18);
     text(text, textX, textY);
