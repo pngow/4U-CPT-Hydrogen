@@ -5,7 +5,6 @@ public class Player {
   private int w = 70;
   private int col;
   private PImage stemImg;
-  private String url;
   
   public Player(PVector loc, PVector speed) {
     this.loc = loc;
@@ -41,8 +40,8 @@ public class Player {
     fill(col);
     ellipse(loc.x, loc.y, l, w);
    
-    image(stemImg, loc.x-35, 465);
-    stemImg.resize(0, 70);
+    image(stemImg, loc.x-35, 465, width/8, height/8);
+    //stemImg.resize(0, 70);
   }
   
   public float getXLoc() {

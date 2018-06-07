@@ -20,9 +20,6 @@ GameOver gameOver;
 
 Player player;
 
-PImage stemImg;
-PImage cell1Img;
-
 String[] imgs = { 
   "https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png",
   "https://smart.servier.com/wp-content/uploads/2016/10/cellule_progenitrice_lymphoide.png",

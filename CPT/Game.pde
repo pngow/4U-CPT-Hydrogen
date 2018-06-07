@@ -93,9 +93,11 @@ public class Game {
     noStroke();
     fill(player.getColor());
     ellipse(25, 60, 25, 25);
+    PImage img = player.getImg();
+    image(img, 15, 30, width/17, height/17);
+    
+    
     text("x" + (5 - levelScore), 45, 65);
-    
-    
   }
   
   void generateCells() {
@@ -105,7 +107,7 @@ public class Game {
     PVector cLoc = new PVector(random(35, width-35), 0);
     PVector cSpeed = new PVector(0, +5);
     Object newCell = new Object(cLoc, cSpeed);
-    newCell.setColor(colors[colorLoc]);
+    newCell.setGraphics(colors[colorLoc], imgs[colorLoc]);
     cells.add(newCell);
   }
   
