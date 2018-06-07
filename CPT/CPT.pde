@@ -17,7 +17,11 @@ About about;
 Button start;
 Game game;
 GameOver gameOver;
-Object player;
+
+Player player;
+
+PImage stemImg;
+
 int score;
 int levelScore;
 
@@ -42,6 +46,10 @@ void setup() {
   start = new Button (225, 350);
   start.setFunction("START", 272, 408);
   
+  //initialize graphics
+  String url = "https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png";
+  stemImg = loadImage(url, "png");
+  
   //initalize beginning score and level for game
   score = 0;
   levelScore = 0;
@@ -49,9 +57,8 @@ void setup() {
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
-  player = new Object(pLoc, pSpeed);
-  
-  player.setColor(#3498DB);
+  player = new Player(pLoc, pSpeed);
+  player.setGraphics(stemImg, #3498DB);
 }
 
 void draw() {
@@ -98,11 +105,4 @@ void keyReleased() {
 //move player in game according to mouse
 void mouseMoved() {
   player.loc.set(mouseX, 500);
-  
-    if (mouseX <= player.getWidth()/2) {
-    player.loc.set(player.getWidth()/2, 500);
-  } else if (mouseX >= 600-(player.getWidth()/2)) {
-    player.loc.set(600-player.getWidth()/2, 500);
-  }
-    
 }

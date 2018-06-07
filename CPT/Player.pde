@@ -4,18 +4,28 @@ public class Player {
   private int l = 70;  
   private int w = 70;
   private int col;
+  private PImage stemImg;
   
   public Player(PVector loc, PVector speed) {
     this.loc = loc;
     this.speed = speed;
   }
   
-  public void setColor(int col) {
+  public void setGraphics(PImage stemImg, int col) {
     this.col = col;
+    this.stemImg = stemImg;
+  }
+  
+  public void setColor(int col){
+    this.col = col; 
   }
   
   public int getColor() {
     return this.col;
+  }
+  
+  public PImage getImg() {
+    return this.stemImg;
   }
   
   public boolean collides(float x, float y) {
@@ -29,6 +39,9 @@ public class Player {
     noStroke();
     fill(col);
     ellipse(loc.x, loc.y, l, w);
+   
+    image(stemImg, loc.x-35, 465);
+    stemImg.resize(0, 70);
   }
   
   public float getXLoc() {
