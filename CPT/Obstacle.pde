@@ -10,7 +10,7 @@ public class Obstacle extends Object {
     PVector point = new PVector(x, y);
     float dist = PVector.dist(getLoc(), point);
     
-    return dist <= w;
+    return dist <= (l+w)/2;
   }
   
   void draw() {
