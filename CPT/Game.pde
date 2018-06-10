@@ -12,26 +12,32 @@ public class Game {
   
   ArrayList<Object> cells = new ArrayList();
   ArrayList<Obstacle> obstacles = new ArrayList();
+  int levelCheck = 0;
   
   void draw() {
     background(255, 255, 255);
    
     //initalize cells, add into an arraylist to store
-    int frameAdjust = 40;
-    int scoreCheck = 0;
     if (frameCount % 180 == 0) {
       generateCells();
-    } else if (score > 0 && score - 5 >= scoreCheck && frameCount % (180 - frameAdjust) == 0) {
+    } else if (levelCheck == 1 && frameCount % 160 == 0) {
       generateCells();
-      //frameAdjust += 40;
-      scoreCheck = score;
+    } else if (levelCheck == 2 && frameCount % 140 == 0) {
+      generateCells();
+    } else if (levelCheck == 3 && frameCount % 120 == 0) {
+      generateCells();
     }
     
     if (frameCount % 200 == 0) {
       generateObstacles();
-    } else if (score > 0 && score - 5 >= scoreCheck && frameCount % (120 - frameAdjust) == 0) {
+    } else if (levelCheck == 1 && frameCount % 160 == 0) {
       generateObstacles();
-    } 
+    } else if (levelCheck == 2 && frameCount % 120 == 0) {
+      generateObstacles();
+    } else if (levelCheck == 3 && frameCount % 80 == 0) {
+      generateObstacles(); 
+    }
+   
    
     //draw and move cells
     for (Object cell : cells) {
@@ -50,7 +56,6 @@ public class Game {
     //check collision && if cell passed screen boundaries
     for (int i = 0; i < cells.size(); i++) {
       if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() == player.getColor()) {
-        println("collision");
         cells.remove(i);
         score ++;
         levelScore ++;
@@ -60,11 +65,11 @@ public class Game {
           Random rand = new Random();
           player.setColor(colors[rand.nextInt(colors.length)]);
           levelScore = 0;
+          levelCheck ++;
           score += 10;
         }
         
       } else if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() != player.getColor()) {
-        println("wrong collision");
         cells.remove(i);
         score --;
         
@@ -74,18 +79,15 @@ public class Game {
         }
         
       } else if (cells.get(i).getYLoc() >= 660) {
-        println("removed cell");
         cells.remove(i);
       }
     }
     
     for (int n = 0; n < obstacles.size(); n++) {
        if (obstacles.get(n).collides(player.loc.x, player.loc.y)) {
-        println("game over");
         gameScreen = 4;
         restart();
       } else if (obstacles.get(n).getYLoc() >= 600) {
-        println("removed obstacle");
         obstacles.remove(n);
       }
     }
@@ -98,8 +100,6 @@ public class Game {
     fill(player.getColor());
     ellipse(25, 60, 25, 25);
     text("x" + (5 - levelScore), 45, 65);
-    
-    
   }
   
   void generateCells() {
@@ -123,6 +123,7 @@ public class Game {
   void restart() {
     gameOver.roundScore(score);
     score = 0;
+    levelScore = 0;
     cells.clear();
     obstacles.clear();
   }
