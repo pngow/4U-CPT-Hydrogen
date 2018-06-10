@@ -17,43 +17,111 @@ public class Game {
   void draw() {
     background(255, 255, 255);
    
-    //initalize cells, add into an arraylist to store
+    //adjust generation of cells according to level
     if (frameCount % 180 == 0) {
       generateCells();
     } else if (levelCheck == 1 && frameCount % 160 == 0) {
       generateCells();
     } else if (levelCheck == 2 && frameCount % 140 == 0) {
       generateCells();
-    } else if (levelCheck == 3 && frameCount % 120 == 0) {
-      generateCells();
+    } else if (levelCheck == 3) {
+      if (frameCount % 120 == 0) {
+        generateCells();
+      }
+      if (frameCount % 90 == 0) {
+        generateCells();
+      }
+    } else if (levelCheck == 4) {
+      if (frameCount % 100 == 0) {
+        generateCells();
+      }
+      if (frameCount % 70 == 0) {
+        generateCells();
+      }
+    } else if (levelCheck >= 5) {
+      if (frameCount % 80 == 0) {
+        generateCells();
+      } 
+      if (frameCount % 50 == 0) {
+        generateCells(); 
+      }
     }
     
     if (frameCount % 200 == 0) {
       generateObstacles();
     } else if (levelCheck == 1 && frameCount % 160 == 0) {
       generateObstacles();
-    } else if (levelCheck == 2 && frameCount % 120 == 0) {
+    } else if (levelCheck == 2) {
+      if (frameCount % 120 == 0) {
       generateObstacles();
-    } else if (levelCheck == 3 && frameCount % 80 == 0) {
-      generateObstacles(); 
+      }
+      if (frameCount % 90 == 0) {
+      generateObstacles();
+      }
+    } else if (levelCheck == 3) {
+      if (frameCount % 80 == 0) {
+        generateObstacles();  
+      }
+      if (frameCount % 50 == 0) {
+      generateObstacles();
+      }
+    } else if (levelCheck == 4) {
+      if (frameCount % 50 == 0) {
+      generateObstacles();
+      }
+      if (frameCount % 40 == 0) {
+      generateObstacles();
+      }
+    } else if (levelCheck >= 5) {
+      if (frameCount % 40 == 0) {
+        generateObstacles(); 
+      }
+      if (frameCount % 20 == 0) {
+        generateObstacles(); 
+      }
     }
    
-   
-    //draw and move cells
+    //draw and move cells, adjust speed according to level
     for (Object cell : cells) {
+      if (levelCheck >= 2) {
+        cell.setSpeed(new PVector(0, +6));
+      } 
+      if (levelCheck >= 4) {
+        cell.setSpeed(new PVector(0, +7));
+      }
+      if (levelCheck == 6) {
+        cell.setSpeed(new PVector(0, +8)); 
+      }
+      if (levelCheck >= 7) {
+        cell.setSpeed(new PVector(0, +9));
+      }
+      
       cell.draw();
       cell.move();
     }
     
-    //draw and move obstacles 
+    //draw and move obstacles, adjust speed according to level
     for (Obstacle obstacle : obstacles) {
+      if (levelCheck >= 2) {
+        obstacle.setSpeed(new PVector(0, +6));
+      }
+      if (levelCheck >= 4) {
+        obstacle.setSpeed(new PVector(0, +7));
+      }
+      if (levelCheck == 6) {
+        obstacle.setSpeed(new PVector(0, +8)); 
+      }
+      if (levelCheck >= 7) {
+        obstacle.setSpeed(new PVector(0, +9)); 
+      }
+      
       obstacle.draw();
       obstacle.move();
     }
      
     player.draw();
     
-    //check collision && if cell passed screen boundaries
+    //check cell collision && if cell passed screen boundaries
     for (int i = 0; i < cells.size(); i++) {
       if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() == player.getColor()) {
         cells.remove(i);
@@ -83,6 +151,7 @@ public class Game {
       }
     }
     
+    //check obstacle collision
     for (int n = 0; n < obstacles.size(); n++) {
        if (obstacles.get(n).collides(player.loc.x, player.loc.y)) {
         gameScreen = 4;
@@ -91,7 +160,8 @@ public class Game {
         obstacles.remove(n);
       }
     }
-     
+    
+    //draw score counter and requirements for what to collect
     fill(0);
     textSize(20);
     text("SCORE: " + score, 10,30);
