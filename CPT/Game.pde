@@ -194,6 +194,7 @@ public class Game {
     gameOver.roundScore(score);
     score = 0;
     levelScore = 0;
+    levelCheck = 0;
     cells.clear();
     obstacles.clear();
   }
