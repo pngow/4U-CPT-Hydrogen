@@ -56,6 +56,7 @@ void setup() {
 
 void draw() {
   if (gameScreen == 0) {
+    cursor();
     menu.draw();
   } else if (gameScreen == 1) {
     game.draw();
@@ -97,12 +98,14 @@ void keyReleased() {
 
 //move player in game according to mouse
 void mouseMoved() {
-  player.loc.set(mouseX, 500);
-  
-  if (mouseX <= (player.getDiameter()/2)) {
-    player.loc.set(0 + (player.getDiameter()/2), 500);
-  } else if (mouseX >= 600 - (player.getDiameter()/2)) {
-    player.loc.set(600 - (player.getDiameter()/2), 500);
-  }
+  if (gameScreen == 1) {
+    noCursor();
+    player.loc.set(mouseX, 500);
     
+    if (mouseX <= (player.getDiameter()/2)) {
+      player.loc.set(0 + (player.getDiameter()/2), 500);
+    } else if (mouseX >= 600 - (player.getDiameter()/2)) {
+      player.loc.set(600 - (player.getDiameter()/2), 500);
+    }
+  } 
 }
