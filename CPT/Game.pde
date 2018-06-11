@@ -14,7 +14,7 @@ public class Game {
   ArrayList<Obstacle> obstacles = new ArrayList();
   
   void draw() {
-    background(255, 255, 255);
+    background(bg);
    
     //initalize cells, add into an arraylist to store
     int frameAdjust = 40;
@@ -114,7 +114,7 @@ public class Game {
   void generateObstacles() {
     PVector oLoc = new PVector(random(20, width-20), 0);
     PVector oSpeed = new PVector(0, +5);
-    Obstacle newObst = new Obstacle(oLoc, oSpeed);
+    Obstacle newObst = new Obstacle(oLoc, oSpeed, obstacleImg);
     obstacles.add(newObst);
   }
 

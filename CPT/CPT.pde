@@ -18,6 +18,8 @@ Button start;
 Game game;
 GameOver gameOver;
 
+PImage bg;
+
 Player player;
 
 String[] imgs = { 
@@ -28,11 +30,15 @@ String[] imgs = {
   "https://smart.servier.com/wp-content/uploads/2016/10/neutrophile_05.png"
 };
 
+String obstacleImg = "https://smart.servier.com/wp-content/uploads/2016/10/CelluleC_5.png";
+
 int score;
 int levelScore;
 
 void setup() {
   size(600, 600);
+  
+  bg = loadImage("background.jpg");
   
   menu = new Menu();
   gameOver = new GameOver();
