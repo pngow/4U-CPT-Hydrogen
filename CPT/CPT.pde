@@ -17,12 +17,28 @@ About about;
 Button start;
 Game game;
 GameOver gameOver;
-Object player;
+
+PImage bg;
+
+Player player;
+
+String[] imgs = { 
+  "https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png",
+  "https://smart.servier.com/wp-content/uploads/2016/10/cellule_progenitrice_lymphoide.png",
+  "https://smart.servier.com/wp-content/uploads/2016/10/basophile_04.png",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Multipotential_hematopoietic_stem_cell.svg/2000px-Multipotential_hematopoietic_stem_cell.svg.png",
+  "https://smart.servier.com/wp-content/uploads/2016/10/neutrophile_05.png"
+};
+
+String obstacleImg = "https://smart.servier.com/wp-content/uploads/2016/10/CelluleC_5.png";
+
 int score;
 int levelScore;
 
 void setup() {
   size(600, 600);
+  
+  bg = loadImage("background.jpg");
   
   menu = new Menu();
   gameOver = new GameOver();
@@ -41,7 +57,7 @@ void setup() {
   game = new Game();
   start = new Button (225, 350);
   start.setFunction("START", 272, 408);
-  
+
   //initalize beginning score and level for game
   score = 0;
   levelScore = 0;
@@ -49,9 +65,8 @@ void setup() {
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
-  player = new Object(pLoc, pSpeed);
-  
-  player.setColor(#3498DB);
+  player = new Player(pLoc, pSpeed);
+  player.setGraphics(#3498DB, imgs[0]);
 }
 
 void draw() {

@@ -15,7 +15,7 @@ public class Game {
   int levelCheck = 0;
   
   void draw() {
-    background(255, 255, 255);
+    background(bg);
    
     //adjust generation of cells according to level
     if (frameCount % 180 == 0) {
@@ -131,7 +131,8 @@ public class Game {
         //change player character
         if (levelScore > 4) {
           Random rand = new Random();
-          player.setColor(colors[rand.nextInt(colors.length)]);
+          int randI = rand.nextInt(colors.length);
+          player.setGraphics(colors[randI], imgs[randI]);
           levelScore = 0;
           levelCheck ++;
           score += 10;
@@ -169,6 +170,9 @@ public class Game {
     noStroke();
     fill(player.getColor());
     ellipse(25, 60, 25, 25);
+    PImage img = player.getImg();
+    image(img, 9, 39, width/17, height/17);
+
     text("x" + (5 - levelScore), 45, 65);
   }
   
@@ -179,14 +183,14 @@ public class Game {
     PVector cLoc = new PVector(random(35, width-35), 0);
     PVector cSpeed = new PVector(0, +5);
     Object newCell = new Object(cLoc, cSpeed);
-    newCell.setColor(colors[colorLoc]);
+    newCell.setGraphics(colors[colorLoc], imgs[colorLoc]);
     cells.add(newCell);
   }
   
   void generateObstacles() {
     PVector oLoc = new PVector(random(20, width-20), 0);
     PVector oSpeed = new PVector(0, +5);
-    Obstacle newObst = new Obstacle(oLoc, oSpeed);
+    Obstacle newObst = new Obstacle(oLoc, oSpeed, obstacleImg);
     obstacles.add(newObst);
   }
 

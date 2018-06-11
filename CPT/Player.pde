@@ -3,18 +3,28 @@ public class Player {
   private PVector speed;
   private int diameter = 70;
   private int col;
+  private PImage stemImg;
   
   public Player(PVector loc, PVector speed) {
     this.loc = loc;
     this.speed = speed;
   }
   
-  public void setColor(int col) {
+  public void setGraphics(int col, String url) {
     this.col = col;
+    this.stemImg = loadImage(url, "png");
+  }
+  
+  public void setColor(int col){
+    this.col = col; 
   }
   
   public int getColor() {
     return this.col;
+  }
+  
+  public PImage getImg() {
+    return this.stemImg;
   }
   
   public boolean collides(float x, float y) {
@@ -28,6 +38,8 @@ public class Player {
     noStroke();
     fill(col);
     ellipse(loc.x, loc.y, diameter, diameter);
+   
+    image(stemImg, loc.x-35, 465, width/8, height/8);
   }
   
   public float getXLoc() {

@@ -3,10 +3,16 @@ public class Object {
   private PVector speed;
   private int diameter = 70;
   private int col;
+  private PImage img;
   
   public Object(PVector loc, PVector speed) {
     this.loc = loc;
     this.speed = speed;
+  }
+  
+  public void setGraphics(int col, String url) {
+    this.col = col;
+    this.img = loadImage(url, "png");
   }
   
   public void setColor(int col) {
@@ -28,6 +34,9 @@ public class Object {
     noStroke();
     fill(col);
     ellipse(loc.x, loc.y, diameter, diameter);
+
+    image(img, loc.x-35, loc.y-35, width/8, height/8);
+    img.resize(0, 70);
   }
   
   public float getXLoc() {
