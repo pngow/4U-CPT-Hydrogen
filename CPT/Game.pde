@@ -55,7 +55,7 @@ public class Game {
         levelScore ++;
         
         //change player character
-        if (levelScore > 0) {
+        if (levelScore > 4) {
           Random rand = new Random();
           int randI = rand.nextInt(colors.length);
           player.setGraphics(colors[randI], imgs[randI]);
@@ -94,7 +94,7 @@ public class Game {
     fill(player.getColor());
     ellipse(25, 60, 25, 25);
     PImage img = player.getImg();
-    image(img, 15, 30, width/17, height/17);
+    image(img, 9, 39, width/17, height/17);
     
     
     text("x" + (5 - levelScore), 45, 65);

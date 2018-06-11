@@ -41,7 +41,6 @@ public class Player {
     ellipse(loc.x, loc.y, l, w);
    
     image(stemImg, loc.x-35, 465, width/8, height/8);
-    //stemImg.resize(0, 70);
   }
   
   public float getXLoc() {

@@ -36,7 +36,7 @@ public class Object {
     fill(col);
     ellipse(loc.x, loc.y, l, w);
     
-    image(img, loc.x-35, loc.y-35);
+    image(img, loc.x-35, loc.y-35, width/8, height/8);
     img.resize(0, 70);
   }
   
