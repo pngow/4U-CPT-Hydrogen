@@ -10,7 +10,7 @@ int[] colors = {
 
 public class Game {
   
-  ArrayList<Object> cells = new ArrayList();
+  ArrayList<Cell> cells = new ArrayList();
   ArrayList<Obstacle> obstacles = new ArrayList();
   int levelCheck = 0;
   
@@ -82,7 +82,7 @@ public class Game {
     }
    
     //draw and move cells, adjust speed according to level
-    for (Object cell : cells) {
+    for (Cell cell : cells) {
       if (levelCheck >= 2) {
         cell.setSpeed(new PVector(0, +6));
       } 
