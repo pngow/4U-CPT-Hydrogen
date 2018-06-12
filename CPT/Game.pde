@@ -182,7 +182,7 @@ public class Game {
     
     PVector cLoc = new PVector(random(35, width-35), 0);
     PVector cSpeed = new PVector(0, +5);
-    Object newCell = new Object(cLoc, cSpeed);
+    Cell newCell = new Cell(cLoc, cSpeed);
     newCell.setGraphics(colors[colorLoc], imgs[colorLoc]);
     cells.add(newCell);
   }
