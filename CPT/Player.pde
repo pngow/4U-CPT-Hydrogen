@@ -1,13 +1,14 @@
 public class Player {
   private PVector loc;
   private PVector speed;
-  private int diameter = 70;
+  private int diameter;
   private int col;
   private PImage stemImg;
   
   public Player(PVector loc, PVector speed) {
     this.loc = loc;
     this.speed = speed;
+    diameter = 70;
   }
   
   public void setGraphics(int col, String url) {
