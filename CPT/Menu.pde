@@ -1,8 +1,8 @@
 class Button {
   private int x;
   private int y;
-  private int l = 150;
-  private int w = 100;
+  private int l;
+  private int w;
   
   String text;
   int textX;
@@ -11,6 +11,8 @@ class Button {
   public Button (int x, int y) {
     this.x = x;
     this.y = y;
+    l = 150;
+    w = 100;
   }
   
   public void setFunction(String text, int textX, int textY) {
