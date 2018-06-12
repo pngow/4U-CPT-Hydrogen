@@ -23,6 +23,10 @@ public class Object {
     return this.col;
   }
   
+  public PImage getImg() {
+    return this.img;
+  }
+  
   public boolean collides(float x, float y) {
     PVector point = new PVector(x, y);
     float dist = PVector.dist(this.loc, point);

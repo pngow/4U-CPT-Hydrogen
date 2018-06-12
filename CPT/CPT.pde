@@ -20,7 +20,7 @@ GameOver gameOver;
 
 PImage bg;
 
-Player player;
+Object player;
 
 String[] imgs = { 
   "https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png",
@@ -65,7 +65,7 @@ void setup() {
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
-  player = new Player(pLoc, pSpeed);
+  player = new Object(pLoc, pSpeed);
   player.setGraphics(#3498DB, imgs[0]);
 }
 

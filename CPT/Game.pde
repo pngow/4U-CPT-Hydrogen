@@ -123,7 +123,7 @@ public class Game {
     
     //check cell collision && if cell passed screen boundaries
     for (int i = 0; i < cells.size(); i++) {
-      if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() == player.getColor()) {
+      if (cells.get(i).collides(player.getXLoc(), player.getYLoc()) && cells.get(i).getColor() == player.getColor()) {
         cells.remove(i);
         score ++;
         levelScore ++;
@@ -138,7 +138,7 @@ public class Game {
           score += 10;
         }
         
-      } else if (cells.get(i).collides(player.loc.x, player.loc.y) && cells.get(i).getColor() != player.getColor()) {
+      } else if (cells.get(i).collides(player.getXLoc(), player.getYLoc()) && cells.get(i).getColor() != player.getColor()) {
         cells.remove(i);
         score --;
         
@@ -154,7 +154,7 @@ public class Game {
     
     //check obstacle collision
     for (int n = 0; n < obstacles.size(); n++) {
-       if (obstacles.get(n).collides(player.loc.x, player.loc.y)) {
+       if (obstacles.get(n).collides(player.getXLoc(), player.getYLoc())) {
         gameScreen = 4;
         restart();
       } else if (obstacles.get(n).getYLoc() >= 600) {
@@ -163,8 +163,8 @@ public class Game {
     }
     
     //draw score counter and requirements for what to collect
-    fill(0);
-    textSize(20);
+    fill(255);
+    textSize(30);
     text("SCORE: " + score, 10,30);
     
     noStroke();
