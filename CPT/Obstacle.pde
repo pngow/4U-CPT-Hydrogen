@@ -1,10 +1,12 @@
 public class Obstacle extends Object {
-  private int l = 20;
-  private int w = 50;
+  private int l;
+  private int w;
   private PImage img;
   
   public Obstacle (PVector loc, PVector speed, String url) {
     super(loc, speed);
+    l = 20;
+    w = 50;
     
     this.img = loadImage(url, "png");
   }

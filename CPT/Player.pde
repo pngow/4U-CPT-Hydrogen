@@ -1,11 +1,11 @@
-public class Object {
+public class Player {
   private PVector loc;
   private PVector speed;
   private int diameter;
   private int col;
-  private PImage img;
+  private PImage stemImg;
   
-  public Object(PVector loc, PVector speed) {
+  public Player(PVector loc, PVector speed) {
     this.loc = loc;
     this.speed = speed;
     diameter = 70;
@@ -13,11 +13,11 @@ public class Object {
   
   public void setGraphics(int col, String url) {
     this.col = col;
-    this.img = loadImage(url, "png");
+    this.stemImg = loadImage(url, "png");
   }
   
-  public void setColor(int col) {
-    this.col = col;
+  public void setColor(int col){
+    this.col = col; 
   }
   
   public int getColor() {
@@ -25,7 +25,7 @@ public class Object {
   }
   
   public PImage getImg() {
-    return this.img;
+    return this.stemImg;
   }
   
   public boolean collides(float x, float y) {
@@ -39,9 +39,8 @@ public class Object {
     noStroke();
     fill(col);
     ellipse(loc.x, loc.y, diameter, diameter);
-
-    image(img, loc.x-35, loc.y-35, width/8, height/8);
-    img.resize(0, 70);
+   
+    image(stemImg, loc.x-35, 465, width/8, height/8);
   }
   
   public float getXLoc() {

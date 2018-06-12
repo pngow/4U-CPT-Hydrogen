@@ -1,22 +1,24 @@
 class Button {
   private int x;
   private int y;
-  private int l = 150;
-  private int w = 100;
+  private int l;
+  private int w;
   
   String text;
-  int textX;
-  int textY;
+  int textXPos;
+  int textYPos;
   
   public Button (int x, int y) {
     this.x = x;
     this.y = y;
+    l = 150;
+    w = 100;
   }
   
-  public void setFunction(String text, int textX, int textY) {
+  public void setFunction(String text, int textXPos, int textYPos) {
     this.text = text;
-    this.textX = textX;
-    this.textY = textY;
+    this.textXPos = textXPos;
+    this.textYPos = textYPos;
   }
   
   public int getX() {
@@ -42,7 +44,7 @@ class Button {
     noStroke();
     fill(0);
     textSize(18);
-    text(text, textX, textY);
+    text(text, textXPos, textYPos);
   }
 }
 
