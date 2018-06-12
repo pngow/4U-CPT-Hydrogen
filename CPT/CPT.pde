@@ -20,7 +20,7 @@ GameOver gameOver;
 
 PImage bg;
 
-Object player;
+Cell player;
 
 String[] imgs = { 
   "https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png",
