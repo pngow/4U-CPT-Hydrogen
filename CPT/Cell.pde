@@ -1,11 +1,11 @@
-public class Object {
+public class Cell {
   private PVector loc;
   private PVector speed;
   private int diameter;
   private int col;
   private PImage img;
   
-  public Object(PVector loc, PVector speed) {
+  public Cell(PVector loc, PVector speed) {
     this.loc = loc;
     this.speed = speed;
     diameter = 70;
