@@ -2,7 +2,7 @@ public class Object {
   private PVector loc;
   private PVector speed;
   
-  public Object {
+  public Object (PVector loc, PVector speed){
     this.loc = loc;
     this.speed = speed;
   }
