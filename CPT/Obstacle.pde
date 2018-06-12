@@ -1,4 +1,4 @@
-public class Obstacle extends Object {
+public class Obstacle extends Cell {
   private int l;
   private int w;
   private PImage img;
