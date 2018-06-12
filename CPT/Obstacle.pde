@@ -1,4 +1,4 @@
-public class Obstacle extends Cell {
+public class Obstacle extends Object {
   private int l;
   private int w;
   private PImage img;
@@ -27,5 +27,13 @@ public class Obstacle extends Cell {
     rect(locX, locY, l, w);
     
     image(img, locX-15, locY-20, width/8, height/8);
+  }
+  
+  public int getLength() {
+    return l;
+  }
+  
+  public int getWidth() {
+    return w;
   }
 }
