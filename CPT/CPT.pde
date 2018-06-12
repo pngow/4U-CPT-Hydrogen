@@ -65,7 +65,7 @@ void setup() {
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
-  player = new Object(pLoc, pSpeed);
+  player = new Cell(pLoc, pSpeed);
   player.setGraphics(#3498DB, imgs[0]);
 }
 
