@@ -1,7 +1,7 @@
 /* if gameScreen =
 0, menu
-1, start game
-2, instructions
+1, startButton game
+2, instrButton
 3, about
 4, game over*/
 int gameScreen = 0;
@@ -43,20 +43,20 @@ void setup() {
   menu = new Menu();
   gameOver = new GameOver();
   
-  //initalize instructions screen and button
+  //initalize instrButton screen and button
   instr = new Instructions();
-  instructions = new Button(100, 200);
-  instructions.setFunction("INSTRUCTIONS", 110, 255);
+  instrButton = new Button(100, 200);
+  instrButton.setFunction("INSTRUCTIONS", 110, 255);
   
   //initialize about screen and button
   about = new About();
   aboutButton = new Button(350, 200);
   aboutButton.setFunction("ABOUT", 395, 245);
   
-  //initalize game and button to start game
+  //initalize game and button to startButton game
   game = new Game();
-  start = new Button (225, 350);
-  start.setFunction("START", 272, 408);
+  startButton = new Button(225, 350);
+  startButton.setFunction("START", 272, 408);
 
   //initalize beginning score and level for game
   score = 0;
@@ -86,9 +86,9 @@ void draw() {
 }
 
 void mouseClicked() {
-  if (gameScreen == 0 && mouseX > instructions.getX() && mouseX < instructions.getX() + instructions.getLength() 
-      && mouseY > instructions.getY() && mouseY < instructions.getY() + instructions.getWidth()) {
-    System.out.println("instructions");
+  if (gameScreen == 0 && mouseX > instrButton.getX() && mouseX < instrButton.getX() + instrButton.getLength() 
+      && mouseY > instrButton.getY() && mouseY < instrButton.getY() + instrButton.getWidth()) {
+    System.out.println("instrButton");
     gameScreen = 2;
   }
   
@@ -98,9 +98,9 @@ void mouseClicked() {
     gameScreen = 3;
   }
   
-  if (gameScreen == 0 && mouseX > start.getX() && mouseX < start.getX() + start.getLength() && mouseY > start.getY()
-      && mouseY < start.getY() + start.getWidth()) {
-    System.out.println("start");
+  if (gameScreen == 0 && mouseX > startButton.getX() && mouseX < startButton.getX() + startButton.getLength() && mouseY > startButton.getY()
+      && mouseY < startButton.getY() + startButton.getWidth()) {
+    System.out.println("startButton");
     gameScreen = 1;
   }
 }
