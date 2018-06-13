@@ -114,11 +114,11 @@ void keyReleased() {
 
 //move player in game according to mouse
 void mouseMoved() {
-  player.loc.set(mouseX, 500);
+  player.setLoc(mouseX, 500);
    
   if (mouseX <= (player.getDiameter()/2)) {
-    player.loc.set(0 + (player.getDiameter()/2), 500);
+    player.setLoc(0 + (player.getDiameter()/2), 500);
   } else if (mouseX >= 600 - (player.getDiameter()/2)) {
-    player.loc.set(600 - (player.getDiameter()/2), 500);
+    player.setLoc(600 - (player.getDiameter()/2), 500);
   }
 }
