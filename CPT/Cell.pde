@@ -10,7 +10,7 @@ public class Cell extends Object{
   
   public boolean collides(float x, float y) {
     PVector point = new PVector(x, y);
-    float dist = PVector.dist(this.loc, point);
+    float dist = PVector.dist(getLoc(), point);
     
     return dist <= diameter/2;
   }
