@@ -7,13 +7,6 @@ public class Object {
     this.speed = speed;
   }
   
-  public boolean collides(float x, float y) {
-    PVector point = new PVector(x, y);
-    float dist = PVector.dist(this.loc, point);
-    
-    return dist <= diameter/2;
-  }
-  
   public float getXLoc() {
     return loc.x;
   }
