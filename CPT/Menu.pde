@@ -1,18 +1,14 @@
 class Button {
   private int x;
   private int y;
-  private int l;
-  private int w;
   
   String text;
   int textXPos;
   int textYPos;
   
-  public Button (int x, int y) {
+  public Button(int x, int y) {
     this.x = x;
     this.y = y;
-    l = 150;
-    w = 100;
   }
   
   public void setFunction(String text, int textXPos, int textYPos) {
@@ -29,20 +25,11 @@ class Button {
     return y;
   }
   
-  public int getLength() {
-    return l;
-  }
-  
-  public int getWidth() {
-    return w;
-  }
-  
   void draw() {
-    fill(#EC7063);
-    rect(x, y, l, w, 20);
+    image(loadImage("https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png", "png"), x, y, width/4, height/4);
     
     noStroke();
-    fill(0);
+    fill(255);
     textSize(18);
     text(text, textXPos, textYPos);
   }
@@ -50,15 +37,15 @@ class Button {
 
 public class Menu {
   void draw() {
-    background(#FFFFFF);
+    background(0);
     
-    fill(0);
+    fill(255);
     textSize(60);
     text("GAME", 200, 150);
 
-    instructions.draw();
+    instrButton.draw();
     aboutButton.draw();
     text("STEM CELLS", 375, 265);
-    start.draw();
-  }
+    startButton.draw();
+  } 
 }
