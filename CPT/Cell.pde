@@ -12,7 +12,7 @@ public class Cell extends Object{
     PVector point = new PVector(x, y);
     float dist = PVector.dist(getLoc(), point);
     
-    return dist <= diameter/2;
+    return dist <= diameter;
   }
   
   public void setGraphics(int col, String url) {
