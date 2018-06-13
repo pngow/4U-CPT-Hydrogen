@@ -8,13 +8,13 @@ int gameScreen = 0;
 
 Menu menu;
 
-Button instructions;
+Button instrButton;
 Instructions instr;
 
 Button aboutButton;
 About about;
 
-Button start;
+Button startButton;
 Game game;
 GameOver gameOver;
 
