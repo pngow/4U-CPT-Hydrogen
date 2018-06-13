@@ -8,6 +8,13 @@ public class Cell extends Object{
     diameter = 70;
   }
   
+  public boolean collides(float x, float y) {
+    PVector point = new PVector(x, y);
+    float dist = PVector.dist(this.loc, point);
+    
+    return dist <= diameter/2;
+  }
+  
   public void setGraphics(int col, String url) {
     this.col = col;
     this.img = loadImage(url, "png");
