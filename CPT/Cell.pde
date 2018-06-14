@@ -28,16 +28,16 @@ public class Cell extends Object{
     setGraphics(colors[colorLoc], imgs[colorLoc]);
   }
   
-  public void setColor(int col) {
-    this.col = col;
-  }
-  
   public int getColor() {
     return this.col;
   }
   
   public PImage getImg() {
     return this.img;
+  }
+  
+  public int getDiameter() {
+    return diameter;
   }
   
   void draw() {
@@ -47,9 +47,5 @@ public class Cell extends Object{
 
     image(img, getXLoc()-35, getYLoc()-35, width/8, height/8);
     img.resize(0, 70);
-  }
-  
-  public int getDiameter() {
-    return diameter;
   }
 }

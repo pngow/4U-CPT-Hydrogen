@@ -181,7 +181,7 @@ public class Game {
     
     //check obstacle collision
     for (int n = 0; n < obstacles.size(); n++) {
-       if (obstacles.get(n).collides(player.getXLoc(), player.getYLoc())) {
+      if (obstacles.get(n).collides(player.getXLoc(), player.getYLoc())) {
         gameScreen = 4;
         restart();
       } else if (obstacles.get(n).getYLoc() >= 600) {
