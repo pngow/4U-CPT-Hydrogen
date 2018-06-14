@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Cell extends Object{
   private int diameter;
   private int col;
@@ -18,6 +20,12 @@ public class Cell extends Object{
   public void setGraphics(int col, String url) {
     this.col = col;
     this.img = loadImage(url);
+  }
+  
+  public void randColor() {
+    Random rand = new Random();
+    int colorLoc = rand.nextInt(imgs.length);  
+    setGraphics(colors[colorLoc], imgs[colorLoc]);
   }
   
   public void setColor(int col) {

@@ -1,18 +1,11 @@
 import java.util.Random;
 
-int[] colors = {
-  #3498DB, //blue
-  #A569BD, //purple
-  #E67E22, //orange
-  #28B463, //green
-  #F4D03F, //yellow
-};
-
 public class Game {
   
   ArrayList<Cell> cells = new ArrayList();
   ArrayList<Obstacle> obstacles = new ArrayList();
-  int levelCheck = 3;
+  int levelCheck = 0;
+  int levelScore = 0;
   
   void draw() {
     background(bg);
@@ -88,28 +81,28 @@ public class Game {
     } else if (levelCheck == 1 && frameCount % 160 == 0) {
       generateObstacles();
     } else if (levelCheck == 2) {
+      if (frameCount % 140 == 0) {
+      generateObstacles();
+      }
       if (frameCount % 120 == 0) {
       generateObstacles();
       }
-      if (frameCount % 90 == 0) {
-      generateObstacles();
-      }
     } else if (levelCheck == 3) {
-      if (frameCount % 80 == 0) {
+      if (frameCount % 100 == 0) {
         generateObstacles();  
       }
-      if (frameCount % 50 == 0) {
+      if (frameCount % 80 == 0) {
       generateObstacles();
       }
     } else if (levelCheck == 4) {
-      if (frameCount % 50 == 0) {
+      if (frameCount % 60 == 0) {
       generateObstacles();
       }
       if (frameCount % 40 == 0) {
       generateObstacles();
       }
     } else if (levelCheck >= 5) {
-      if (frameCount % 40 == 0) {
+      if (frameCount % 30 == 0) {
         generateObstacles(); 
       }
       if (frameCount % 20 == 0) {
@@ -166,9 +159,7 @@ public class Game {
         
         //change player character
         if (levelScore > 4) {
-          Random rand = new Random();
-          int randI = rand.nextInt(colors.length);
-          player.setGraphics(colors[randI], imgs[randI]);
+          player.randColor();
           levelScore = 0;
           levelCheck ++;
           score += 10;
@@ -207,26 +198,26 @@ public class Game {
     textFont(f);
     textSize(30);
     
-    text(score, 115, 30);
+    text(score, 118, 30);
     
     noStroke();
     fill(player.getColor());
     ellipse(25, 60, 25, 25);
     PImage img = player.getImg();
-    image(img, 15, 39, width/16, height/16);
+    image(img, 14, 39, width/16, height/16);
     
     text(" x " + (5 - levelScore), 50, 65);
     
   }
   
   void generateCells() {
-    Random rand = new Random();
-    int colorLoc = rand.nextInt(colors.length);
+    //Random rand = new Random();
+    //int colorLoc = rand.nextInt(imgs.length);
     
     PVector cLoc = new PVector(random(35, width-35), 0);
     PVector cSpeed = new PVector(0, +3);
     Cell newCell = new Cell(cLoc, cSpeed);
-    newCell.setGraphics(colors[colorLoc], imgs[colorLoc]);
+    newCell.randColor();
     cells.add(newCell);
   }
   

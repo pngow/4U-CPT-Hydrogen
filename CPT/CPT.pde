@@ -24,6 +24,14 @@ PFont f;
 
 Cell player;
 
+int[] colors = {
+  #3498DB, //blue
+  #A569BD, //purple
+  #E67E22, //orange
+  #28B463, //green
+  #F4D03F, //yellow
+};
+
 String[] imgs = { 
   "cell1.png",
   "cell2.png",
@@ -41,7 +49,6 @@ String instrImg4 = "aboutImg.png";
 String instrImg5 = "bloodImg.png";
 
 int score;
-int levelScore;
 
 void setup() {
   size(600, 600);
@@ -77,13 +84,12 @@ void setup() {
 
   //initalize beginning score and level for game
   score = 0;
-  levelScore = 0;
 
   //initalize player
   PVector pLoc = new PVector(300, 500);
   PVector pSpeed = new PVector(0, 0);
   player = new Cell(pLoc, pSpeed);
-  player.setGraphics(#3498DB, imgs[0]);
+  player.randColor();
 }
 
 void draw() {
