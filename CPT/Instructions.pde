@@ -1,5 +1,4 @@
- PFont font;
- PFont f;
+
  PImage img;
  PImage img2;
  PImage img3;
@@ -53,19 +52,20 @@ class Instructions {
     textFont(f);
     fill(255, 255, 255);
     textSize(20);
-    text("-Use the mouse pad to move side to side", 75, 155);
-    image(img, 490, 125, width/16, height/13);
+    text("You are a stem cell and your DNA calls you to\ndifferentiate! You must collect the right materials to\ndo so", 75, 155);
+    text("-Use the mouse pad to move side to side", 75, 270);
+    image(img, 490, 250, width/16, height/13);
     
-    text("-Collect the specific cells to gain points", 75, 195);
-    text("------>", 275, 248);
-    image(img2, 200, 210, width/10, height/10);
-    image(img2, 340, 210, width/10, height/10);
+    //text("-Collect the specific cells to gain points + differentiate", 75, 220);
+    //text("------>", 275, 248);
+    //image(img2, 200, 210, width/10, height/10);
+    //image(img2, 340, 210, width/10, height/10);
     
-    text("-Complete the requirements to gain extra points", 75, 300);
-    text("-Collect the wrong cells and you'll lose points", 75, 340);
+    //text("-Complete the requirements to gain extra points", 75, 300);
+    //text("-Collect the wrong cells and you'll lose points", 75, 340);
     
-    text("-Avoid                  at all costs!", 75, 380);
-    image(img3, 165, 350, width/10, height/10);
+    //text("-Avoid                  at all costs!", 75, 380);
+    //image(img3, 155, 350, width/10, height/10);
     
     textSize(15);
     text("PRESS BACKSPACE TO RETURN TO MENU", 150, 580);

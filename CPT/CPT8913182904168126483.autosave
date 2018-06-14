@@ -38,7 +38,7 @@ String instrImg = "cursor.png";
 String instrImg2;
 String instrImg3;
 String instrImg4 = "aboutImg.png";
-String instrImg5 = "bloodImg.png";
+
 
 int score;
 int levelScore;
@@ -52,7 +52,6 @@ void setup() {
   img2 = loadImage(imgs[0], "png");
   img3 = loadImage(obstacleImg, "png");
   img4 = loadImage(instrImg4, "png");
-  img5 = loadImage(instrImg5, "png");
   
   font = createFont("RAINFALL.otf", 70);
   f = createFont("Arial", 12);
@@ -60,6 +59,7 @@ void setup() {
   menu = new Menu();
   gameOver = new GameOver();
   
+  textFont(font);
   //initalize instrButton screen and button
   instr = new Instructions();
   instrButton = new Button(100, 200);
@@ -105,16 +105,19 @@ void draw() {
 void mouseClicked() {
   if (gameScreen == 0 && mouseX > instrButton.getX() && mouseX < instrButton.getX() + instrButton.getLength() 
       && mouseY > instrButton.getY() && mouseY < instrButton.getY() + instrButton.getWidth()) {
+    System.out.println("instrButton");
     gameScreen = 2;
   }
   
   if (gameScreen == 0 && mouseX > aboutButton.getX() && mouseX < aboutButton.getX() + aboutButton.getLength() && mouseY > aboutButton.getY()
       && mouseY < aboutButton.getY() + aboutButton.getWidth()) {
+    System.out.println("about");
     gameScreen = 3;
   }
   
   if (gameScreen == 0 && mouseX > startButton.getX() && mouseX < startButton.getX() + startButton.getLength() && mouseY > startButton.getY()
       && mouseY < startButton.getY() + startButton.getWidth()) {
+    System.out.println("startButton");
     gameScreen = 1;
   }
 }
@@ -122,6 +125,7 @@ void mouseClicked() {
 void keyReleased() {
   if (key == BACKSPACE) {
     gameScreen = 0;
+    System.out.println("back");
   }
 }
 

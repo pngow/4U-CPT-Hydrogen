@@ -54,8 +54,9 @@ public class Menu {
     background(0);
     
     fill(255);
-    textSize(60);
-    text("GAME", 200, 150);
+    textFont(font);
+    textSize(80);
+    text("SUPER CELLA", 70, 150);
 
     instrButton.draw();
     aboutButton.draw();
