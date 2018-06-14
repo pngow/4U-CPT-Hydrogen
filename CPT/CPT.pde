@@ -96,19 +96,16 @@ void draw() {
 void mouseClicked() {
   if (gameScreen == 0 && mouseX > instrButton.getX() && mouseX < instrButton.getX() + instrButton.getLength() 
       && mouseY > instrButton.getY() && mouseY < instrButton.getY() + instrButton.getWidth()) {
-    System.out.println("instrButton");
     gameScreen = 2;
   }
   
   if (gameScreen == 0 && mouseX > aboutButton.getX() && mouseX < aboutButton.getX() + aboutButton.getLength() && mouseY > aboutButton.getY()
       && mouseY < aboutButton.getY() + aboutButton.getWidth()) {
-    System.out.println("about");
     gameScreen = 3;
   }
   
   if (gameScreen == 0 && mouseX > startButton.getX() && mouseX < startButton.getX() + startButton.getLength() && mouseY > startButton.getY()
       && mouseY < startButton.getY() + startButton.getWidth()) {
-    System.out.println("startButton");
     gameScreen = 1;
   }
 }
@@ -116,7 +113,6 @@ void mouseClicked() {
 void keyReleased() {
   if (key == BACKSPACE) {
     gameScreen = 0;
-    System.out.println("back");
   }
 }
 
