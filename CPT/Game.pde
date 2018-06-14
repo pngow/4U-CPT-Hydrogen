@@ -120,16 +120,16 @@ public class Game {
     //draw and move cells, adjust speed according to level
     for (Cell cell : cells) {
       if (levelCheck >= 2) {
-        cell.setSpeed(new PVector(0, +6));
+        cell.setSpeed(new PVector(0, +4));
       } 
       if (levelCheck >= 4) {
-        cell.setSpeed(new PVector(0, +7));
+        cell.setSpeed(new PVector(0, +5));
       }
       if (levelCheck == 6) {
-        cell.setSpeed(new PVector(0, +8)); 
+        cell.setSpeed(new PVector(0, +6)); 
       }
       if (levelCheck >= 7) {
-        cell.setSpeed(new PVector(0, +9));
+        cell.setSpeed(new PVector(0, +7));
       }
       
       cell.draw();
@@ -139,16 +139,16 @@ public class Game {
     //draw and move obstacles, adjust speed according to level
     for (Obstacle obstacle : obstacles) {
       if (levelCheck >= 2) {
-        obstacle.setSpeed(new PVector(0, +6));
+        obstacle.setSpeed(new PVector(0, +4));
       }
       if (levelCheck >= 4) {
-        obstacle.setSpeed(new PVector(0, +7));
+        obstacle.setSpeed(new PVector(0, +5));
       }
       if (levelCheck == 6) {
-        obstacle.setSpeed(new PVector(0, +8)); 
+        obstacle.setSpeed(new PVector(0, +6)); 
       }
       if (levelCheck >= 7) {
-        obstacle.setSpeed(new PVector(0, +9)); 
+        obstacle.setSpeed(new PVector(0, +7)); 
       }
       
       obstacle.draw();
@@ -217,7 +217,7 @@ public class Game {
     int colorLoc = rand.nextInt(colors.length);
     
     PVector cLoc = new PVector(random(35, width-35), 0);
-    PVector cSpeed = new PVector(0, +5);
+    PVector cSpeed = new PVector(0, +3);
     Cell newCell = new Cell(cLoc, cSpeed);
     newCell.setGraphics(colors[colorLoc], imgs[colorLoc]);
     cells.add(newCell);
@@ -225,7 +225,7 @@ public class Game {
   
   void generateObstacles() {
     PVector oLoc = new PVector(random(20, width-20), 0);
-    PVector oSpeed = new PVector(0, +5);
+    PVector oSpeed = new PVector(0, +3);
     Obstacle newObst = new Obstacle(oLoc, oSpeed, obstacleImg);
     obstacles.add(newObst);
   }
