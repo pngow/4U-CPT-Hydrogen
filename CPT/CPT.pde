@@ -32,6 +32,10 @@ String[] imgs = {
 
 String obstacleImg = "https://smart.servier.com/wp-content/uploads/2016/10/CelluleC_5.png";
 
+String instrImg = "https://cims.nyu.edu/~brenden/supplemental/turingtests/images/cursor-white.png";
+String instrImg2;
+String instrImg3 ="https://smart.servier.com/wp-content/uploads/2016/10/CelluleC_5.png";
+
 int score;
 int levelScore;
 
@@ -39,6 +43,10 @@ void setup() {
   size(600, 600);
   
   bg = loadImage("background.jpg");
+  
+  img = loadImage(instrImg, "png");
+  img2 = loadImage(imgs[0], "png");
+  img3 = loadImage(instrImg3, "png");
   
   menu = new Menu();
   gameOver = new GameOver();
