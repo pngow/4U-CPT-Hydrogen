@@ -20,7 +20,7 @@ class Button {
     this.text = text;
     this.textXPos = textXPos;
     this.textYPos = textYPos;
-    this.img = loadImage("https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png", "png");
+    this.img = loadImage(imgs[0]);
   }
   
   public int getX() {
