@@ -12,7 +12,7 @@ public class Game {
   
   ArrayList<Cell> cells = new ArrayList();
   ArrayList<Obstacle> obstacles = new ArrayList();
-  int levelCheck = 0;
+  int levelCheck = 3;
   
   void draw() {
     background(bg);
@@ -200,16 +200,23 @@ public class Game {
     
     //draw score counter and requirements for what to collect
     fill(255);
+    textFont(font);
     textSize(30);
-    text("SCORE: " + score, 10, 30);
+    text("SCORE: ", 10, 30);
+
+    textFont(f);
+    textSize(30);
+    
+    text(score, 115, 30);
     
     noStroke();
     fill(player.getColor());
     ellipse(25, 60, 25, 25);
     PImage img = player.getImg();
-    image(img, 9, 39, width/17, height/17);
-
-    text("x" + (5 - levelScore), 45, 65);
+    image(img, 15, 39, width/16, height/16);
+    
+    text(" x " + (5 - levelScore), 50, 65);
+    
   }
   
   void generateCells() {

@@ -63,17 +63,17 @@ void setup() {
   //initalize instrButton screen and button
   instr = new Instructions();
   instrButton = new Button(100, 200);
-  instrButton.setFunction("INSTRUCTIONS", 110, 255);
+  instrButton.setFunction("INSTRUCTIONS", 115, 290);
   
   //initialize about screen and button
   about = new About();
   aboutButton = new Button(350, 200);
-  aboutButton.setFunction("ABOUT", 395, 245);
+  aboutButton.setFunction("ABOUT", 403, 280);
   
   //initalize game and button to startButton game
   game = new Game();
   startButton = new Button(225, 350);
-  startButton.setFunction("START", 272, 408);
+  startButton.setFunction("PLAY NOW", 260, 440);
 
   //initalize beginning score and level for game
   score = 0;
