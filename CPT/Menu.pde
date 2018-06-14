@@ -12,8 +12,8 @@ class Button {
   public Button(int x, int y) {
     this.x = x;
     this.y = y;
-    l = 150;
-    w = 100;
+    l = 160;
+    w = 150;
   }
   
   public void setFunction(String text, int textXPos, int textYPos) {
