@@ -23,18 +23,18 @@ PImage bg;
 Cell player;
 
 String[] imgs = { 
-  "https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png",
-  "https://smart.servier.com/wp-content/uploads/2016/10/cellule_progenitrice_lymphoide.png",
-  "https://smart.servier.com/wp-content/uploads/2016/10/basophile_04.png",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Multipotential_hematopoietic_stem_cell.svg/2000px-Multipotential_hematopoietic_stem_cell.svg.png",
-  "https://smart.servier.com/wp-content/uploads/2016/10/neutrophile_05.png"
+  "cell1.png",
+  "cell2.png",
+  "cell3.png",
+  "cell4.png",
+  "cell5.png"
 };
 
-String obstacleImg = "https://smart.servier.com/wp-content/uploads/2016/10/CelluleC_5.png";
+String obstacleImg = "obstCell.png";
 
-String instrImg = "https://cims.nyu.edu/~brenden/supplemental/turingtests/images/cursor-white.png";
+String instrImg = "cursor.png";
 String instrImg2;
-String instrImg3 ="https://smart.servier.com/wp-content/uploads/2016/10/CelluleC_5.png";
+String instrImg3;
 
 int score;
 int levelScore;
@@ -46,7 +46,7 @@ void setup() {
   
   img = loadImage(instrImg, "png");
   img2 = loadImage(imgs[0], "png");
-  img3 = loadImage(instrImg3, "png");
+  img3 = loadImage(obstacleImg, "png");
   
   menu = new Menu();
   gameOver = new GameOver();

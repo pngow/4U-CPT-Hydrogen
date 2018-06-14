@@ -17,7 +17,7 @@ public class Cell extends Object{
   
   public void setGraphics(int col, String url) {
     this.col = col;
-    this.img = loadImage(url, "png");
+    this.img = loadImage(url);
   }
   
   public void setColor(int col) {

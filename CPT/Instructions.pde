@@ -54,7 +54,7 @@ class Instructions {
     fill(255, 255, 255);
     textSize(20);
     text("-Use the mouse pad to move side to side", 75, 155);
-    image(img, 475, 125, width/16, height/13);
+    image(img, 490, 125, width/16, height/13);
     
     text("-Collect the specific cells to gain points", 75, 195);
     text("------>", 275, 248);
@@ -65,7 +65,7 @@ class Instructions {
     text("-Collect the wrong cells and you'll lose points", 75, 340);
     
     text("-Avoid                  at all costs!", 75, 380);
-    image(img3, 150, 350, width/10, height/10);
+    image(img3, 165, 350, width/10, height/10);
     
     textSize(15);
     text("PRESS BACKSPACE TO RETURN TO MENU", 150, 580);

@@ -3,6 +3,7 @@ class Button {
   private int y;
   private int l;
   private int w;
+  private PImage img;
   
   String text;
   int textXPos;
@@ -19,6 +20,7 @@ class Button {
     this.text = text;
     this.textXPos = textXPos;
     this.textYPos = textYPos;
+    this.img = loadImage("https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png", "png");
   }
   
   public int getX() {
@@ -38,7 +40,7 @@ class Button {
   }
   
   void draw() {
-    image(loadImage("https://smart.servier.com/wp-content/uploads/2016/10/cellule_souche_multipotente.png", "png"), x, y, width/4, height/4);
+    image(img, x, y, width/4, height/4);
     
     noStroke();
     fill(255);

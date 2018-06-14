@@ -201,7 +201,7 @@ public class Game {
     //draw score counter and requirements for what to collect
     fill(255);
     textSize(30);
-    text("SCORE: " + score, 10,30);
+    text("SCORE: " + score, 10, 30);
     
     noStroke();
     fill(player.getColor());
