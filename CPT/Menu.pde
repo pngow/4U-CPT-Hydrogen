@@ -56,11 +56,16 @@ public class Menu {
     fill(255);
     textFont(font);
     textSize(80);
-    text("SUPER CELLA", 70, 150);
+    text("SUPER CELLA", 45, 150);
+    
+    textSize(40);
+    fill(#ff6666);
+    text("ALL ABOUT STEM CELLS", 70, 570);
 
+    fill(255);
     instrButton.draw();
     aboutButton.draw();
-    text("STEM CELLS", 375, 265);
+    text("STEM CELLS", 375, 290);
     startButton.draw();
   } 
 }

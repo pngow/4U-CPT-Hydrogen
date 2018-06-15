@@ -47,26 +47,27 @@ class Instructions {
     ellipse(0, 600, 60, 60);
     
     fill(255, 255, 255);
-    text("HOW TO PLAY", 60, 80);
+    text("HOW TO PLAY", 67, 80);
     
     textFont(f);
     fill(255, 255, 255);
     textSize(20);
     text("You are a stem cell and your DNA calls you to\ndifferentiate! You must collect the right materials to\ndo so", 75, 155);
     text("-Use the mouse pad to move side to side", 75, 270);
-    image(img, 490, 250, width/16, height/13);
+    image(img, 480, 240, width/16, height/13);
     
-    //text("-Collect the specific cells to gain points + differentiate", 75, 220);
-    //text("------>", 275, 248);
-    //image(img2, 200, 210, width/10, height/10);
-    //image(img2, 340, 210, width/10, height/10);
+    text("-Collect the specific cells to gain points + differentiate", 75, 310);
+    text("------>", 275, 365);
+    image(img2, 200, 330, width/10, height/10); 
+    image(img2, 340, 330, width/10, height/10);
     
-    //text("-Complete the requirements to gain extra points", 75, 300);
-    //text("-Collect the wrong cells and you'll lose points", 75, 340);
+    text("-Complete the requirements to gain extra points", 75, 420);
+    text("-Collect the wrong cells and you'll lose points", 75, 460);
     
-    //text("-Avoid                  at all costs!", 75, 380);
-    //image(img3, 155, 350, width/10, height/10);
+    text("-Avoid                  at all costs!", 75, 500);
+    image(img3, 150, 470, width/10, height/10);
     
+    textFont(font);
     textSize(15);
     text("PRESS BACKSPACE TO RETURN TO MENU", 150, 580);
   }

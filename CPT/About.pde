@@ -57,7 +57,13 @@ class About {
     text("There is currently a significant deficit\nof stem cell donors as only 50% of\neligible patients find a suitable match ", 75, 440);
     image(img5, 350, 400);
     
+    textFont(font);
+    textSize(50);
+    fill(#ff6666);
+    text("DONATE TODAY", 115, 550);
+    
     textSize(15);
+    fill(255);
     text("PRESS BACKSPACE TO RETURN TO MENU", 150, 580);
   }
 }

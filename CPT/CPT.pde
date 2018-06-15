@@ -60,20 +60,21 @@ void setup() {
   menu = new Menu();
   gameOver = new GameOver();
   
+  
   //initalize instrButton screen and button
   instr = new Instructions();
   instrButton = new Button(100, 200);
-  instrButton.setFunction("INSTRUCTIONS", 110, 255);
+  instrButton.setFunction("INSTRUCTIONS", 110, 280);
   
   //initialize about screen and button
   about = new About();
   aboutButton = new Button(350, 200);
-  aboutButton.setFunction("ABOUT", 395, 245);
+  aboutButton.setFunction("ABOUT", 395, 265);
   
   //initalize game and button to startButton game
   game = new Game();
   startButton = new Button(225, 350);
-  startButton.setFunction("START", 272, 408);
+  startButton.setFunction("START", 272, 430);
 
   //initalize beginning score and level for game
   score = 0;

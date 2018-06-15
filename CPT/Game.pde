@@ -51,6 +51,8 @@ public class Game {
     ellipse(0, 450, 60, 60);
     ellipse(0, 550, 60, 60);
     ellipse(0, 600, 60, 60);
+    
+    textFont(f);
 
 
     //adjust generation of cells according to level
