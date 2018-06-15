@@ -1,18 +1,11 @@
 import java.util.Random;
 
-int[] colors = {
-  #3498DB, //blue
-  #A569BD, //purple
-  #E67E22, //orange
-  #28B463, //green
-  #F4D03F, //yellow
-};
-
 public class Game {
   
   ArrayList<Cell> cells = new ArrayList();
   ArrayList<Obstacle> obstacles = new ArrayList();
   int levelCheck = 0;
+  int levelScore = 0;
   
   void draw() {
     background(bg);
@@ -90,28 +83,28 @@ public class Game {
     } else if (levelCheck == 1 && frameCount % 160 == 0) {
       generateObstacles();
     } else if (levelCheck == 2) {
+      if (frameCount % 140 == 0) {
+      generateObstacles();
+      }
       if (frameCount % 120 == 0) {
       generateObstacles();
       }
-      if (frameCount % 90 == 0) {
-      generateObstacles();
-      }
     } else if (levelCheck == 3) {
-      if (frameCount % 80 == 0) {
+      if (frameCount % 100 == 0) {
         generateObstacles();  
       }
-      if (frameCount % 50 == 0) {
+      if (frameCount % 80 == 0) {
       generateObstacles();
       }
     } else if (levelCheck == 4) {
-      if (frameCount % 50 == 0) {
+      if (frameCount % 60 == 0) {
       generateObstacles();
       }
       if (frameCount % 40 == 0) {
       generateObstacles();
       }
     } else if (levelCheck >= 5) {
-      if (frameCount % 40 == 0) {
+      if (frameCount % 30 == 0) {
         generateObstacles(); 
       }
       if (frameCount % 20 == 0) {
@@ -168,9 +161,7 @@ public class Game {
         
         //change player character
         if (levelScore > 4) {
-          Random rand = new Random();
-          int randI = rand.nextInt(colors.length);
-          player.setGraphics(colors[randI], imgs[randI]);
+          player.randColor();
           levelScore = 0;
           levelCheck ++;
           score += 10;
@@ -192,7 +183,7 @@ public class Game {
     
     //check obstacle collision
     for (int n = 0; n < obstacles.size(); n++) {
-       if (obstacles.get(n).collides(player.getXLoc(), player.getYLoc())) {
+      if (obstacles.get(n).collides(player.getXLoc(), player.getYLoc())) {
         gameScreen = 4;
         restart();
       } else if (obstacles.get(n).getYLoc() >= 600) {
@@ -202,26 +193,33 @@ public class Game {
     
     //draw score counter and requirements for what to collect
     fill(255);
+    textFont(font);
     textSize(30);
-    text("SCORE: " + score, 10, 30);
+    text("SCORE: ", 10, 30);
+
+    textFont(f);
+    textSize(30);
+    
+    text(score, 118, 30);
     
     noStroke();
     fill(player.getColor());
     ellipse(25, 60, 25, 25);
     PImage img = player.getImg();
-    image(img, 9, 39, width/17, height/17);
-
-    text("x" + (5 - levelScore), 45, 65);
+    image(img, 14, 39, width/16, height/16);
+    
+    text(" x " + (5 - levelScore), 50, 65);
+    
   }
   
   void generateCells() {
-    Random rand = new Random();
-    int colorLoc = rand.nextInt(colors.length);
+    //Random rand = new Random();
+    //int colorLoc = rand.nextInt(imgs.length);
     
     PVector cLoc = new PVector(random(35, width-35), 0);
     PVector cSpeed = new PVector(0, +3);
     Cell newCell = new Cell(cLoc, cSpeed);
-    newCell.setGraphics(colors[colorLoc], imgs[colorLoc]);
+    newCell.randColor();
     cells.add(newCell);
   }
   

@@ -40,11 +40,10 @@ class Button {
   }
   
   void draw() {
-    image(img, x, y, width/4, height/4);
+    image(img, x, y, width/3.5, height/3.5);
     
-    noStroke();
     fill(255);
-    textSize(18);
+    textSize(21);
     text(text, textXPos, textYPos);
   }
 }
@@ -56,7 +55,7 @@ public class Menu {
     fill(255);
     textFont(font);
     textSize(80);
-    text("SUPER CELLA", 45, 150);
+    text("SUPER CELLA", 40, 150);
     
     textSize(40);
     fill(#ff6666);
@@ -65,7 +64,10 @@ public class Menu {
     fill(255);
     instrButton.draw();
     aboutButton.draw();
-    text("STEM CELLS", 375, 290);
+
+
+    text("STEM CELLS", 378, 305);
+
     startButton.draw();
   } 
 }
