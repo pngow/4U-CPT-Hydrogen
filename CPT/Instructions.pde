@@ -52,20 +52,20 @@ class Instructions {
     textFont(f);
     fill(255, 255, 255);
     textSize(20);
-    text("You are a stem cell and your DNA calls you to\ndifferentiate! You must collect the right materials to\ndo so", 75, 155);
-    text("-Use the mouse pad to move side to side", 75, 270);
-    image(img, 480, 240, width/16, height/13);
+    text("You are a stem cell and your DNA calls you to\ndifferentiate! You must collect the right\n materials to do so", 75, 135);
+    text("- Use the mouse pad to move side to side", 75, 241);
+    image(img, 505, 215, width/16, height/13);
     
-    text("-Collect the specific cells to gain points + differentiate", 75, 310);
+    text("- Collect the specific cells to gain points\n + differentiate", 75, 280);
     text("------>", 275, 365);
     image(img2, 200, 330, width/10, height/10); 
     image(img2, 340, 330, width/10, height/10);
     
-    text("-Complete the requirements to gain extra points", 75, 420);
-    text("-Collect the wrong cells and you'll lose points", 75, 460);
+    text("- Complete the requirements to gain extra points", 75, 420);
+    text("- Collect the wrong cells and you'll lose points", 75, 460);
     
-    text("-Avoid                  at all costs!", 75, 500);
-    image(img3, 150, 470, width/10, height/10);
+    text("- Avoid                  at all costs!", 75, 500);
+    image(img3, 175, 470, width/10, height/10);
     
     textFont(font);
     textSize(15);

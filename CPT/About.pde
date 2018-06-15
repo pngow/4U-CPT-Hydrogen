@@ -48,14 +48,14 @@ class About {
     
     textFont(f);
     textSize(17);
-    text("Stem cells are immature cells in the\nbloodstream that have the ability to\nspecialize into nerve, blood, muscle,\nand liver cells.", 75, 125);
-    image(img4, 375, 110, width/4, height/4.5);
+    text("Stem cells are immature cells in the\nbloodstream that have the ability to\nspecialize into nerve, blood, muscle,\nand liver cells.", 57, 125);
+    image(img4, 385, 110, width/4, height/4.5);
     
     text("Healthy stem cells can be\ntransplanted into patients with\ncancer, Alzheimer’s, and bone\nmarrow diseases as an effective\ntreatment", 300, 270);
     image(img2, 90, 240, width/4, height/4);
     
-    text("There is currently a significant deficit\nof stem cell donors as only 50% of\neligible patients find a suitable match ", 75, 440);
-    image(img5, 350, 400);
+    text("There is currently a significant deficit\nof stem cell donors as only 50% of\neligible patients find a suitable match ", 57, 435);
+    image(img5, 358, 385);
     
     textFont(font);
     textSize(50);
