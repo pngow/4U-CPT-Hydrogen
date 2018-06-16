@@ -46,6 +46,5 @@ public class Cell extends Object{
     ellipse(getXLoc(), getYLoc(), diameter, diameter);
 
     image(img, getXLoc()-35, getYLoc()-35, width/8, height/8);
-    img.resize(0, 70);
   }
 }
